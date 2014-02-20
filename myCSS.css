@@ -12,7 +12,7 @@ hr{
 	background: #333;
 }
 /* Home */
-#homeBody{
+.homeBody{
 	background-image: url(../dinnerplanner-html/images/Food-Image.jpg);
 	background-size: 100%;
 }
