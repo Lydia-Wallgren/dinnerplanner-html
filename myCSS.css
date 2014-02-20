@@ -1,7 +1,11 @@
 /* This is our own CSS!! :D */
 
 /* Universal styling */
-
+.header{
+opacity: 0.6;
+padding-left: 5%;
+background-color: white;
+}
 
 
 /* Home */
@@ -11,8 +15,6 @@
 }
 #homeHeader{
 	background: #FACE78;
-	opacity: 0.6;
-	padding-left: 5%;
 }
 #homeView{
 	background: white;
