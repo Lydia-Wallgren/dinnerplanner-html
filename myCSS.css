@@ -1,9 +1,16 @@
 /* This is our own CSS!! :D */
 
 /* Universal styling */
+
+/*
 .header{
-padding-left: 5%;
 background-color: rgba(250, 250, 250, 0.6);
+}
+*/
+
+
+.header{
+	background-color: #EDEDED; 
 }
 
 hr{
@@ -11,12 +18,22 @@ hr{
 	border-top: 0;
 	background: #333;
 }
+
+
+em{
+	color: #000000;
+}
+
 /* Home */
+
+
+
 #homeBody{
 	background-image: url(../dinnerplanner-html/images/Food-Image.jpg);
 	background-size: 100%;
 }
 #homeHeader{
+	padding-left: 5%;
 	background-color: rgba(250, 206, 120, 0.6);
 }
 #homeView{
