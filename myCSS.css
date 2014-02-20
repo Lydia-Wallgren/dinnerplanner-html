@@ -16,8 +16,9 @@ hr{
 }
 
 
-em{
+em.emH{
 	color: #000000;
+	margin-left: 1em;
 }
 
 /* Home */
