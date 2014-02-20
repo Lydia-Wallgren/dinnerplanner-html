@@ -8,6 +8,8 @@ var HomeView = function (container,model) {
 	homeViewH2.innerHTML = "A home dinner service";
 	homeViewP.innerHTML = "Here you will have lots of fun! <br/>Start quickly!";
 
+	document.getElementById('homeBody').className += " homeBody";
+
 	/*****************************************  
 	      Observer implementation    
 	*****************************************/
