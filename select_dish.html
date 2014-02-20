@@ -15,7 +15,7 @@
 
   </head>
   <body>
-	<div class="container orange" id="dish_header">
+	<div class="container orange" id="dish_header" style="width: 100%">
 		<h4>SELECT DISH</h4>
 		<hr/>
 		<div id="dish_search">
@@ -24,21 +24,17 @@
 				<li><button type="button" class="btn btn-default">
 				  <span class="glyphicon glyphicon-search"></span> Search
 				</button></li>
-				<li><div class="btn-group">
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						Starter
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dish_type_dropdown">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Starter</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Main Course</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dessert</a></li>		
-					</ul>
-				</div></li>
+				<li align="right">
+					<select class="form-control">
+						<option>Starter</option>
+						<option>Main Course</option>
+						<option>Dessert</option>
+					</select>
+				</li>
 			</div>
 		</div>
 	</div>
-	<div class="container" id="dish_list">
+	<div class="container" id="dish_list" style="width: 100%">
 		
 	</div>
 
