@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dish selection view</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.orange { background-color: #FFCC66; }
+		.black { background-color: #FFFFFF; }
+	</style>
+
+  </head>
+  <body>
+	<div class="container orange" id="dish_header">
+		<h4>SELECT DISH</h4>
+		<hr/>
+		<div id="dish_search">
+			<ul class="list-inline">
+				<li><input type="text" class="form-control" placeholder="Enter key words"/></li>
+				<li><button type="button" class="btn btn-default">
+				  <span class="glyphicon glyphicon-search"></span> Search
+				</button></li>
+				<li><div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						Starter
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dish_type_dropdown">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Starter</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Main Course</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dessert</a></li>		
+					</ul>
+				</div></li>
+			</div>
+		</div>
+	</div>
+	<div class="container" id="dish_list">
+		
+	</div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/exampleView.js"></script>
+	<script src="js/view/exampleViewController.js"></script>
+  </body>
+</html>
