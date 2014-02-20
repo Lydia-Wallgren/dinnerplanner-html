@@ -1,0 +1,24 @@
+/* This is our own CSS!! :D */
+
+/* Universal styling */
+
+
+
+/* Home */
+#homeBody{
+	background-image: url(../dinnerplanner-html/images/Food-Image.jpg);
+	background-size: 100%;
+}
+#homeHeader{
+	background: #FACE78;
+	opacity: 0.6;
+	padding-left: 5%;
+}
+#homeView{
+	background: white;
+	opacity: 0.6;
+	position: absolute;
+	top: 25%;
+	padding-left: 5%;
+	padding-bottom: 2%;
+}
