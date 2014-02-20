@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic Drawing App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+  </head>
+  <body>
+	<div class="row">
+		<div class="col-md-12" id="homeHeader">
+			<h1>Homelette <small><em>From the best chefs in the worl directly in to your kitchen</em></small></h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6" id="homeView">
+			<h2 id="homeViewH2"></h2>
+			<hr id="myLine">
+			<p id="homeViewP"></p>
+			<button id="plusGuest" class="btn">Create new dinner</button>
+		</div>
+	</div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Put css file here -->
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/homeView.js"></script>
+	<script src="js/view/homeViewController.js"></script>
+  </body>
+</html>
