@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Drawing App</title>
+    <title>Confirm Dinner</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -16,23 +16,41 @@
   <body id="homeBody">
 	<div class="header">
 		<div class="container">
-			<h1>Homelette <small><em>From the best chefs in the world directly in to your kitchen</em></small></h1>
+			<h1>Homelette <small><em class="emH">From the best chefs in the world directly in to your kitchen</em></small></h1>
 		</div>
+		<hr/>
 	</div>
-	<div class="row">
-		<div class="col-md-12" id="myDinnerHeader">
-      <div class="col-md-6">
-        <h2>My Dinner</h2>
-      </div>
-      <div class="col-md-6 pull-right">
-        <button id="plusGuest" class="btn">Create new dinner</button>
-      </div>
+	
+	<div id ="homeHeader">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12" id="myDinnerHeader">
+					<div class="col-md-6">
+						<h3><b>My Dinner</b></h3>
+					</div>
+					<div class="pull-right">
+						<button id="plusGuest" class="btn">Create new dinner</button>
+					</div>
+				</div>
+			</div>
 		</div>
+		<hr class="under"/>
 	</div>
-  <div class="row">
-    <div></div> 
-  </div>
-
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-md-offset-3">
+				<img src="../dinnerplanner-html/images/bakedbrie.jpg" class="imageStyle">
+				<p>Picture</p>
+			</div> 
+			<div class="col-md-2">
+				<img src="../dinnerplanner-html/images/toast.jpg" class="imageStyle">
+				<p>Picture2</p>
+			</div> 
+			<hr class="vertical"/>
+		</div>
+		<hr/>
+	</div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
