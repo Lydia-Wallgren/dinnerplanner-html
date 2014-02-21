@@ -37,14 +37,17 @@ hr.under{
 p.red{
 	font-weight:bold;
 	color: rgb(88,0,0) ;
+}
+p.textcenter{
 	text-align:center;
 }
 p.underPic{
 	font-weight:bold;
 	padding-bottom: 2%;
+	margin-bottom: 2%;
 	padding-top: 2%;
 	text-align:center;
-	width : 120px;
+	width : 110px;
 	background-color: rgb(200, 200, 200);
 	border: 1px solid black;
 }
@@ -54,20 +57,21 @@ hr.vertical
 	margin-top: 2.7%;
 	width: 2px;
 	background-color: black;
-	height: 180px;
+	height: 165px;
 	float: left;
 } 
 
 img.imageStyle{
 	margin-top: 20%;
-	width : 120px;
-	height : 120px;	
+	width : 110px;
+	height : 110px;	
 	border: 3px solid black;
 }
 
 p.lefty{
+	margin-bottom: 0;
 	font-weight:bold;
-	margin-top: 100%;
+	margin-top: 94%;
 }
 
 
