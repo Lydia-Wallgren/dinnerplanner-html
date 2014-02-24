@@ -32,10 +32,10 @@
 
 		<div class "row">
 
-			<!--This is the people and cost div    class ="container"  -->
 			<div>
 
-				<div class ="col-md-3">
+			<!--My dinner box-->
+				<div class ="col-md-3 myDinnerBox">
 					<h2>My Dinner</h2>
 
 					<div class="row">
@@ -103,6 +103,11 @@
 						</div>
 
 					</div>
+					<div class="row">
+						<div class="text-center">
+							<button type="button" class="btn btn-default mybtn"> Comfirm Dinner </button>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -111,10 +116,18 @@
 			<div class ="col-md-9 orange">
 				<div class="row">
 					<div class="col-md-6">
-						<h2>Dish Name</h4>
+						<div class="row">
+							<div class="col-md-6">
+								<h2>Dish Name</h4>
+							</div>
+							<div class="col-md-6">
+								<button id="backToSelect" class="btn mybtn"><b>Back to Select Dish</b></button>
+							</div>
+						</div>
 						<img src="../dinnerplanner-html/images/bakedbrie.jpg">
+						<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</em></p>
+						<h2>Preparations</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<button id="backToSelect" class="btn mybtn"><b>Back to Select Dish</b></button>
 					</div>
 					<div class="col-md-6 ingredients">
 						<h4>Ingredients for 4 people</h4>
@@ -150,7 +163,7 @@
 						<hr class="select" />
 						<div class="row">
 							<div class="col-md-8">
-								<button id="backToSelect" class="btn mybtn"><b>Confirm Dish</b></button>
+								<button id="confirmDish" class="btn mybtn"><b>Confirm Dish</b></button>
 							</div>							
 							<div class="col-md-2 margin_top">
 								SEK
@@ -161,11 +174,6 @@
 						</div>
 					</div>
 						
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<h2>Preparations</h2>
-					</div>
 				</div>
 			</div>
 
