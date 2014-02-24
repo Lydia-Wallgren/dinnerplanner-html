@@ -22,7 +22,7 @@ hr.select{
 	margin-top: 2px;
 }
 
-button.btn{
+button.mybtn{
 	margin-top: 8%;
 	background-color: rgb(250, 206, 120);
 	border: 2px solid black;
@@ -112,6 +112,9 @@ div.select{
 /*select_dish*/
 .orange { background-color: #FFCJ66; }
 .black { background-color: #FFFFFF; }
+
+
+
 
 
 
