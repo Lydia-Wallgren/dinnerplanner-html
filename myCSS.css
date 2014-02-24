@@ -13,6 +13,10 @@ hr{
 	background: #333;
 }
 
+h4{
+	margin-top: 20px;
+}
+
 /*moas select box*/
 hr.select{
 	margin-top: 2px;
@@ -104,6 +108,7 @@ div.select{
 }
 
 
+
 /*select_dish*/
 .orange { background-color: #FFCJ66; }
 .black { background-color: #FFFFFF; }
@@ -111,12 +116,12 @@ div.select{
 
 
 
-
-
-
-
-
-
-
+/* fullMenu */
+img.fullMenuImage{
+	margin-top: 20px;
+	width : 110px;
+	height : 110px;	
+	border: 3px solid black;
+}
 
 

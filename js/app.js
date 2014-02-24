@@ -11,5 +11,6 @@ $(function() {
 
 	//var homeView = new HomeView($("#homeView"),model);
    	//var homeViewController = new HomeViewController(homeView,model);
-	var overView = new OverView($("#overView"),model);
+	//var overView = new OverView($("#overView"),model);
+	var fullMenuView = new fullMenuView($("#fullMenuView"),model);
 });
