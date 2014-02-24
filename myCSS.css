@@ -118,7 +118,12 @@ div.select{
 .black { background-color: #FFFFFF; }
 
 
-
+/* My dinner box */
+.myDinnerBox{
+	border: 2px solid black;
+	margin-top: 5px;
+	padding-bottom: 15px;
+}
 
 
 
