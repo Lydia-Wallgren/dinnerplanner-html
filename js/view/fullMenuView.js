@@ -1,14 +1,49 @@
 //ExampleView Object constructor
-var HomeView = function (container,model) {
+var FullMenuView = function (container,model) {
 	
 	
 	//we set the constant text
 	
 	var homeViewH2 = document.getElementById('homeViewH2');
 	homeViewH2.innerHTML = "A home dinner service";
-	homeViewP.innerHTML = "Here you will have lots of fun! <br/>Start quickly!";
 
-	document.getElementById('homeBody').className += " homeBody";
+	//getting dish from model
+	var starterDish = model.getDish(model.getSelectedDish('starter'));
+	var mainDish = model.getDish(model.getSelectedDish('main dish'));
+	var dessertDish = model.getDish(model.getSelectedDish('dessert'));
+	
+	//starter
+	if(starterDish == null){
+		var starterdiv = document.getElementById('starterdiv');
+		starterdiv.style.display = "none";
+	}
+	else{
+		document.getElementById('starterImg').src = "../dinnerplanner-html/images/" + starterDish.image;
+		document.getElementById('starterName').innerHTML = starterDish.name;
+		document.getElementById('startertPrep').innerHTML = starterDish.description;
+	}
+	
+	//main
+	if(mainDish == null){
+		var maindishdiv = document.getElementById('maindishdiv');
+		maindishdiv.style.display = "none";
+	}
+	else{
+		document.getElementById('mainImg').src = "../dinnerplanner-html/images/" + mainDish.image;
+		document.getElementById('mainName').innerHTML = mainDish.name;
+		document.getElementById('mainPrep').innerHTML = mainDish.description;
+	}
+	
+	//dessert
+	if(dessertDish == null){
+		var dessertdiv = document.getElementById('dessertdiv');
+		dessertdiv.style.display = "none";
+	}
+	else{
+		document.getElementById('dessertImg').src = "../dinnerplanner-html/images/" + dessertDish.image;
+		document.getElementById('dessertName').innerHTML = dessertDish.name;
+		document.getElementById('dessertPrep').innerHTML = desssertDish.description;
+	}
 
 	/*****************************************  
 	      Observer implementation    
