@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="myCSS.css">
 
   </head>
-  <body id="homeBody">
+  <body>
 	<div class="header">
 		<div class="container">
 			<h1>Homelette <small><em class="emH">From the best chefs in the world directly in to your kitchen</em></small></h1>
@@ -26,7 +26,7 @@
 			<div class="row">
 				<div class="col-md-12" id="myDinnerHeader">
 					<div class="col-md-6">
-						<h3><b>My Dinner</b></h3>
+						<h3 id="homeViewH2"></h3>
 					</div>
 					<div class="pull-right">
 						<button id="backToEdit" class="btn"><b>Go back and edit dinner</b></button>
@@ -37,19 +37,19 @@
 		<hr class="under"/>
 	</div>
 	
-	<div class="container">
+	<div class="container" id="overViewContainer">
 		<div class="row">
-			<div class="col-md-2 col-md-offset-3">
-				<img src="../dinnerplanner-html/images/bakedbrie.jpg" class="imageStyle" id="starterImg">
+			<div class="col-md-2 col-md-offset-3" id="starterdiv">
+				<img class="imageStyle" id="starterImg">
 				<p class="underPic" id="starterName">Starter</p>
 				<p class="red textcenter" id="starterPrice">0 SEK</p> 
 			</div> 
-			<div class="col-md-2">
-				<img src="../dinnerplanner-html/images/toast.jpg" class="imageStyle" id="mainImg">
+			<div class="col-md-2" id="maindishdiv">
+				<img src="../dinnerplanner-html/images/bakedbrie.jpg" class="imageStyle" id="mainImg">
 				<p class="underPic" id="mainName">Main</p>
 				<p class="red textcenter" id="mainPrice">0 SEK</p> 
 			</div> 
-			<div class="col-md-2">
+			<div class="col-md-2" id="dessertdiv">
 				<img src="../dinnerplanner-html/images/meatballs.jpg" class="imageStyle" id="dessertImg">
 				<p class="underPic" id="dessertName">Dessert</p>
 				<p class="red textcenter" id="dessertPrice">0 SEK</p> 
@@ -77,7 +77,7 @@
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/homeView.js"></script>
-	<script src="js/view/homeViewController.js"></script>
+	<script src="js/view/overView.js"></script>
+	<!--<script src="js/view/overViewController.js"></script>-->
   </body>
 </html>

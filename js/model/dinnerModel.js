@@ -3,8 +3,8 @@ var DinnerModel = function() {
  
 	var menu = [];
 	var numberOfGuests =3; //set default number of guests
-	menu['starter'] = 1; //set a starter to the menu, to use for testing
-
+	menu['starter'] = 3; //set a starter to the menu, to use for testing
+	menu['main dish'] = 100;
 
 	this.setNumberOfGuests = function(num) {
 		if(num>0) {
@@ -96,6 +96,14 @@ var DinnerModel = function() {
 		}
 	}
 
+	//return price for one dish (created by us)
+	this.getDishPrice = function (ingredients){
+		var sum = 0;
+		for(i in ingredients){
+			sum += ingredients[i].price * numberOfGuests;
+		}
+			return sum;
+	}
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,

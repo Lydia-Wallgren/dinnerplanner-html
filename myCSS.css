@@ -48,6 +48,7 @@ p.underPic{
 	padding-top: 2%;
 	text-align:center;
 	width : 110px;
+	height : 50px;
 	background-color: rgb(200, 200, 200);
 	border: 1px solid black;
 }
@@ -57,7 +58,7 @@ hr.vertical
 	margin-top: 2.7%;
 	width: 2px;
 	background-color: black;
-	height: 165px;
+	height: 185px;
 	float: left;
 } 
 
@@ -71,7 +72,7 @@ img.imageStyle{
 p.lefty{
 	margin-bottom: 0;
 	font-weight:bold;
-	margin-top: 94%;
+	margin-top: 106%;
 }
 
 

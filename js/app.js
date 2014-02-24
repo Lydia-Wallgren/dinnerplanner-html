@@ -6,6 +6,10 @@ $(function() {
 	var model = new DinnerModel();
 	
 	//And create the needed controllers and views
-	var homeView = new HomeView($("#homeView"),model);
-   	var homeViewController = new HomeViewController(homeView,model);
+	//var exampleView = new ExampleView($("#exampleView"),model);
+   	//var exampleViewController = new ExampleViewController(exampleView,model);
+
+	//var homeView = new HomeView($("#homeView"),model);
+   	//var homeViewController = new HomeViewController(homeView,model);
+	var overView = new OverView($("#overView"),model);
 });
