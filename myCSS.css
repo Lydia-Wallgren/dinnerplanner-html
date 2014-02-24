@@ -113,9 +113,6 @@ div.select{
 
 
 
-/*select_dish*/
-.orange { background-color: #FFCJ66; }
-.black { background-color: #FFFFFF; }
 
 
 .dish_form{
@@ -127,7 +124,13 @@ div.select{
 	background-color: rgb(248, 219, 163);
 }
 
+/* My dinner box */
 
+.myDinnerBox{
+	border: 2px solid black;
+	margin-top: 5px;
+	padding-bottom: 15px;
+}
 
 
 /* fullMenu */
