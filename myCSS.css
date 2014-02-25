@@ -30,6 +30,7 @@ button.mybtn{
 	margin-top: 8%;
 	background-color: rgb(250, 206, 120);
 	border: 2px solid black;
+	font-weight: bold;
 }
 
 em.emH{
