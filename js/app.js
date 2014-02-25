@@ -48,4 +48,6 @@ $(function() {
 		
 		window.stage = stage;
 	};
+	
+	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
 });
