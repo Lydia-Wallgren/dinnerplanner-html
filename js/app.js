@@ -51,4 +51,5 @@ $(function() {
 	};
 	
 	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
+	//var dishInfoView = new DishInfoView($("#dishInfo"),model);
 });
