@@ -1,35 +1,55 @@
 //ExampleView Object constructor
 var myDinnerBoxView = function(container, model ) {
-	
-
-	/*						<div class ="col-md-6">
-								<div class="pull left">
-									<p>_______</p>
-								</div>
-							</div>
-							<div class ="col-md-6">
-								<div class="pull-right">
-									<p>0.0 SEK</p>
-								</div>
-							</div>
-							*/
-
 
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
 	var dinnerBox = container.find("#selectedDishes");
-	var div = $("<div>");
-	div.addClass("col-md-6");
-	div.html("<p>Pending</p>");
-	dinnerBox.append(div);
-	var SEKdiv = $("<div>");
-	SEKdiv.addClass("col-md-6");	
-	var rightDiv = $("<div>");
-	rightDiv.addClass("pull-right");
-	rightDiv.html("00.00");
-	dinnerBox.append(SEKdiv);
-	SEKdiv.append(rightDiv);
-
+	
+	var starter = model.getDish(model.getSelectedDish('starter'));
+	if (starter != null) {
+		this.selectedStarter = $("<div>");
+		this.selectedStarter.addClass("col-md-6");
+		this.selectedStarter.html(starter.name);
+		dinnerBox.append(this.selectedStarter);
+		var starterSEK = $("<div>");
+		starterSEK.addClass("col-md-6");	
+		this.starterCost = $("<div>");
+		this.starterCost.addClass("pull-right");
+		this.starterCost.html(model.getDishPrice(starter.ingredients));
+		dinnerBox.append(starterSEK);
+		starterSEK.append(this.starterCost);
+	};
+	var main = model.getDish(model.getSelectedDish('main dish'));
+	if (main != null) {
+		this.selectedMain = $("<div>");
+		this.selectedMain.addClass("col-md-6");
+		this.selectedMain.html(main.name);
+		dinnerBox.append(this.selectedMain);
+		var mainSEK = $("<div>");
+		mainSEK.addClass("col-md-6");	
+		this.mainCost = $("<div>");
+		this.mainCost.addClass("pull-right");
+		this.mainCost.html(model.getDishPrice(main.ingredients));
+		dinnerBox.append(mainSEK);
+		mainSEK.append(this.mainCost);
+	};
+	var dessert = model.getDish(model.getSelectedDish('dessert'));
+	if (dessert != null) {
+		this.selectedDessert = $("<div>");
+		this.selectedDessert.addClass("col-md-6");
+		this.selectedDessert.html(dessert.name);
+		dinnerBox.append(this.selectedDessert);
+		var dessertSEK = $("<div>");
+		dessertSEK.addClass("col-md-6");	
+		this.dessertCost = $("<div>");
+		this.dessertCost.addClass("pull-right");
+		this.dessertCost.html(model.getDishPrice(dessert.ingredients));
+		dinnerBox.append(dessertSEK);
+		dessertSEK.append(this.dessertCost);
+	};
+	
+	this.totalCost = container.find("#totalCost");
+	this.totalCost.html('SEK ' + model.getTotalMenuPrice());
 
 	/*this.plusButton = container.find("#plusGuest");
 	this.minusButton = container.find("#minusGuest");*/
@@ -66,12 +86,12 @@ var myDinnerBoxView = function(container, model ) {
 	*****************************************/
 	
 	//Register an observer to the model
-/*	model.addObserver(this);
+	model.addObserver(this);
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
-		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalPrice.html(model.getTotalMenuPrice());
-	}*/
+		this.selectedDish.html(model.getNumberOfGuests());
+		//this.totalPrice.html(model.getTotalMenuPrice());
+	}
 }
  
