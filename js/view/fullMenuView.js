@@ -4,7 +4,6 @@ var FullMenuView = function (container,model) {
 	this.container = container;
 	
 	//we set the constant text
-	
 	var homeViewH2 = container.find("#homeViewH2");
 	homeViewH2.html("<b>My Dinner: " + model.getNumberOfGuests() + " people</b>");
 
@@ -25,7 +24,7 @@ var FullMenuView = function (container,model) {
 	
 	//main
 	if(mainDish == null){
-		container.find("#maindishdiv").hide();;
+		container.find("#maindishdiv").hide();
 	}
 	else{
 		container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + mainDish.image);
@@ -35,7 +34,7 @@ var FullMenuView = function (container,model) {
 	
 	//dessert
 	if(dessertDish == null){
-		container.find("#dessertdiv").hide();;
+		container.find("#dessertdiv").hide();
 	}
 	else{
 		container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + dessertDish.image);
@@ -43,5 +42,17 @@ var FullMenuView = function (container,model) {
 		container.find("#dessertPrep").html(dessertDish.description);
 	}
 	
+	/*****************************************  
+	      Observer implementation    
+	*****************************************/
+	
+	//Register an observer to the model
+	model.addObserver(this);
+	
+	//This function gets called when there is a change at the model
+	this.update = function(arg){
+		this.numberOfGuests.html(model.getNumberOfGuests());
+		this.totalPrice.html(model.getTotalMenuPrice());
+	}
 }
  

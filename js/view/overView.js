@@ -34,8 +34,8 @@ var OverView = function (container,model) {
 	}
 	
 	//we set the constant text	
-	var homeViewH2 = document.getElementById('homeViewH2');
-	homeViewH2.innerHTML = "<b>My Dinner: " + model.getNumberOfGuests() + " people</b>";
+	var homeViewH2 = container.find("#homeViewH2");
+	homeViewH2.html("<b>My Dinner: " + model.getNumberOfGuests() + " people</b>");
 
 	//getting dish from model
 	var starterDish = model.getDish(model.getSelectedDish('starter'));
@@ -44,50 +44,48 @@ var OverView = function (container,model) {
 	
 	//starter
 	if(starterDish == null){
-		var starterdiv = document.getElementById('starterdiv');
-		starterdiv.style.display = "none";
+		container.find("#starterdiv").hide();
 	}
 	else{
-		document.getElementById('starterImg').src = "../dinnerplanner-html/images/" + starterDish.image;
-		document.getElementById('starterName').innerHTML = starterDish.name;
-		document.getElementById('starterPrice').innerHTML = model.getDishPrice(starterDish.ingredients) + " SEK";
+		container.find("#starterImg").attr('src','../dinnerplanner-html/images/' + starterDish.image);
+		container.find("#starterName").html(starterDish.name);
+		container.find('#starterPrice').html(model.getDishPrice(starterDish.ingredients) + " SEK");
 		var kol = addkolum(starterDish,mainDish,dessertDish);
-		document.getElementById('starterdiv').className = kol;
+		container.find("#starterdiv").addClass(kol);
 	}
 	
 	//main
 	if(mainDish == null){
-		var maindishdiv = document.getElementById('maindishdiv');
-		maindishdiv.style.display = "none";
+		container.find("#maindishdiv").hide();
 	}
 	else{
-		document.getElementById('mainImg').src = "../dinnerplanner-html/images/" + mainDish.image;
-		document.getElementById('mainName').innerHTML = mainDish.name;
-		document.getElementById('mainPrice').innerHTML = model.getDishPrice(mainDish.ingredients) + " SEK";
+		container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + mainDish.image);
+		container.find("#mainName").html(mainDish.name);
+		container.find('#mainPrice').html(model.getDishPrice(mainDish.ingredients) + " SEK");
 		var kol = addkolum(mainDish,starterDish,dessertDish);
-		document.getElementById('maindishdiv').className = kol;
+		container.find("#maindishdiv").addClass(kol);
 	}
 	
 	//dessert
 	if(dessertDish == null){
-		var dessertdiv = document.getElementById('dessertdiv');
-		dessertdiv.style.display = "none";
+		container.find("#dessertdiv").hide();
 	}
 	else{
-		document.getElementById('dessertImg').src = "../dinnerplanner-html/images/" + dessertDish.image;
-		document.getElementById('dessertName').innerHTML = dessertDish.name;
-		document.getElementById('dessertPrice').innerHTML = model.getDishPrice(dessertDish.ingredients) + " SEK";
+		container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + dessertDish.image);
+		container.find("#dessertName").html(dessertDish.name);
+		container.find('#dessertPrice').html(model.getDishPrice(dessertDish.ingredients) + " SEK");
 		var kol = addkolum(dessertDish,starterDish,mainDish);
-		document.getElementById('dessertdiv').className = kol;
+		container.find('#dessertdiv').addClass(kol);
 	}
 
 	//if no dish is selected
 	if(starterDish == null && mainDish == null && dessertDish == null){
-		document.getElementById('lefttotaldiv').className = 'col-md-offset-7';
+		container.find('#lefttotaldiv').addClass('col-md-offset-7');
 	}
 	
 	//set total price
-	document.getElementById('totalPrice').innerHTML = model.getTotalMenuPrice() + " SEK";
+	container.find('#totalPrice').html(model.getTotalMenuPrice() + " SEK");
+	
 	/*****************************************  
 	      Observer implementation    
 	*****************************************/
