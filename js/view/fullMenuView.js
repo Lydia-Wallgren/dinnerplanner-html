@@ -6,7 +6,7 @@ var FullMenuView = function (container,model) {
 	//we set the constant text
 	
 	var homeViewH2 = container.find("#homeViewH2");
-	homeViewH2.html("A home dinner service");
+	homeViewH2.html("<b>My Dinner: " + model.getNumberOfGuests() + " people</b>");
 
 	//getting dish from model
 	var starterDish = model.getDish(model.getSelectedDish('starter'));
@@ -15,48 +15,33 @@ var FullMenuView = function (container,model) {
 	
 	//starter
 	if(starterDish == null){
-		var starterdiv = container.find("#starterdiv");
-		starterdiv.hide();
+		container.find("#starterdiv").hide();
 	}
 	else{
-		document.getElementById('starterImg').src = "../dinnerplanner-html/images/" + starterDish.image;
-		document.getElementById('starterName').innerHTML = starterDish.name;
-		document.getElementById('startertPrep').innerHTML = starterDish.description;
+		container.find("#starterImg").attr('src','../dinnerplanner-html/images/' + starterDish.image);
+		container.find("#starterName").html(starterDish.name);
+		container.find("#startertPrep").html(starterDish.description);
 	}
 	
 	//main
 	if(mainDish == null){
-		var maindishdiv = document.getElementById('maindishdiv');
-		maindishdiv.style.display = "none";
+		container.find("#maindishdiv").hide();;
 	}
 	else{
-		document.getElementById('mainImg').src = "../dinnerplanner-html/images/" + mainDish.image;
-		document.getElementById('mainName').innerHTML = mainDish.name;
-		document.getElementById('mainPrep').innerHTML = mainDish.description;
+		container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + mainDish.image);
+		container.find("#mainName").html(mainDish.name);
+		container.find("#mainPrep").html(mainDish.description);
 	}
 	
 	//dessert
 	if(dessertDish == null){
-		var dessertdiv = document.getElementById('dessertdiv');
-		dessertdiv.style.display = "none";
+		container.find("#dessertdiv").hide();;
 	}
 	else{
-		document.getElementById('dessertImg').src = "../dinnerplanner-html/images/" + dessertDish.image;
-		document.getElementById('dessertName').innerHTML = dessertDish.name;
-		document.getElementById('dessertPrep').innerHTML = dessertDish.description;
+		container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + dessertDish.image);
+		container.find("#dessertName").html(dessertDish.name);
+		container.find("#dessertPrep").html(dessertDish.description);
 	}
-
-	/*****************************************  
-	      Observer implementation    
-	*****************************************/
 	
-	//Register an observer to the model
-	model.addObserver(this);
-	
-	//This function gets called when there is a change at the model
-	this.update = function(arg){
-		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalPrice.html(model.getTotalMenuPrice());
-	}
 }
  
