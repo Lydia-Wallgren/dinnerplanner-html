@@ -1,14 +1,18 @@
 //ExampleView Object constructor
 var HomeView = function (container,model) {
 	
-	
+	this.container = container;
+
 	//we set the constant text
 	
-	var homeViewH2 = document.getElementById('homeViewH2');
-	homeViewH2.innerHTML = "A home dinner service";
-	homeViewP.innerHTML = "Here you will have lots of fun! <br/>Start quickly!";
+	var homeViewH2 = container.find("#homeViewH2");
+	homeViewH2.html("A home dinner service");
+	var homeViewP = container.find("#homeViewP");
+	homeViewP.html("Here you will have lots of fun! <br/>Start quickly!");
 
-	document.getElementById('homeBody').className += " homeBody";
+	//document.getElementById('homeBody').className += " homeBody";
+	
+	this.createDinnerButton = container.find("#createDinnerButton");
 
 	/*****************************************  
 	      Observer implementation    

@@ -1,11 +1,12 @@
 //ExampleView Object constructor
 var FullMenuView = function (container,model) {
 	
+	this.container = container;
 	
 	//we set the constant text
 	
-	var homeViewH2 = document.getElementById('homeViewH2');
-	homeViewH2.innerHTML = "A home dinner service";
+	var homeViewH2 = container.find("#homeViewH2");
+	homeViewH2.html("A home dinner service");
 
 	//getting dish from model
 	var starterDish = model.getDish(model.getSelectedDish('starter'));
@@ -14,8 +15,8 @@ var FullMenuView = function (container,model) {
 	
 	//starter
 	if(starterDish == null){
-		var starterdiv = document.getElementById('starterdiv');
-		starterdiv.style.display = "none";
+		var starterdiv = container.find("#starterdiv");
+		starterdiv.hide();
 	}
 	else{
 		document.getElementById('starterImg').src = "../dinnerplanner-html/images/" + starterDish.image;
@@ -42,7 +43,7 @@ var FullMenuView = function (container,model) {
 	else{
 		document.getElementById('dessertImg').src = "../dinnerplanner-html/images/" + dessertDish.image;
 		document.getElementById('dessertName').innerHTML = dessertDish.name;
-		document.getElementById('dessertPrep').innerHTML = desssertDish.description;
+		document.getElementById('dessertPrep').innerHTML = dessertDish.description;
 	}
 
 	/*****************************************  

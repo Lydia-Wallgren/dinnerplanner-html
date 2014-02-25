@@ -4,35 +4,111 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Basic Drawing App</title>
+    <title>Homelette - Group 17</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    
+    <!-- Our own CSS -->
+    <link rel="stylesheet" type="text/css" href="myCSS.css">
 
   </head>
-  <body>
-	<div class="container">
-		<h1>Dinner planner</h1>
-		<div id="exampleView">
-			<div>
-				Number of guest <span id="numberOfGuests"></span>
+  <body id="homeBody" class="homeBackground">
+	<!-- Fix Header -->
+	
+	<div class="header homeHeader" id="mainHeaderView">
+		<div class="container" id="headerTitle">
+			<h1>Homelette <small><em class="emH">From the best chefs in the world directly in to your kitchen</em></small></h1>
+		</div>
+		<hr/>
+	</div>
+	
+	<!-- Diferent views -->
+	
+	<div class="col-md-6" id="homeView"> 
+		<h2 id="homeViewH2"></h2>
+		<hr id="myLine">
+		<p id="homeViewP"></p>
+		<button id="createDinnerButton" class="btn mybtn"><b>Create new dinner</b></button>
+	</div>
+	
+	<div id="fullMenuView" hidden>
+		<div id ="fullMenuHeader" class="homeHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="myDinnerHeader">
+						<div class="col-md-6">
+							<h3 id="homeViewH2">My Dinner</h3>
+						</div>
+						<div class="pull-right">
+							<button id="backToEdit" class="btn mybtn"><b>Go back and edit dinner</b></button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div>
-				<button id="plusGuest" class="btn"><span class="glyphicon glyphicon-plus"></span></button>
-			    <button id="minusGuest" class="btn"><span class="glyphicon glyphicon-minus"></span></button>
+			<hr class="under"/>
+		</div>
+		
+		<div class="container" id="fullMenu">
+			<div class="row" id="starterdiv">
+				<div class="col-md-2">
+					<img class="fullMenuImage" id="starterImg">
+				</div> 
+				<div class="col-md-4">
+					<h2 id="starterName">Starter</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div> 
+				<div class="col-md-6">
+					<h4>Preparations</h2>
+					<p id="startertPrep">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div> 
 			</div>
+			<div class="row" id="maindishdiv">
+				<div class="col-md-2">
+					<img class="fullMenuImage" id="mainImg">
+				</div> 
+				<div class="col-md-4">
+					<h2 id="mainName">Main</h2>
+					<p>Lorem ipsum</p>
+				</div> 
+				<div class="col-md-6">
+					<h4>Preparations</h2>
+					<p id="mainPrep">Lorem ipsum</p>
+				</div> 
+			</div> 
+			<div class="row" id="dessertdiv">
+				<div class="col-md-2">
+					<img class="fullMenuImage" id="dessertImg">
+				</div> 
+				<div class="col-md-4">
+					<h2 id="dessertName">Dessert</h2>
+					<p>Lorem ipsum</p>
+				</div> 
+				<div class="col-md-6">
+					<h4>Preparations</h2>
+					<p id="dessertPrep">Lorem ipsum</p>
+				</div> 
+			</div> 
 		</div>
 	</div>
+	
+	<!-- JAVASCRIPTS -->
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Put css file here -->
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
-	<script src="js/view/exampleView.js"></script>
-	<script src="js/view/exampleViewController.js"></script>
+	<script src="js/view/mainHeaderView.js"></script>
+	<script src="js/view/mainHeaderViewController.js"></script>
+	<script src="js/view/homeView.js"></script>
+	<script src="js/view/homeViewController.js"></script>
+	<script src="js/view/fullMenuView.js"></script>
+	<script src="js/view/fullMenuViewController.js"></script>
   </body>
 </html>

@@ -4,6 +4,7 @@
 
 .header{
 	background-color: #EDEDED; 
+	cursor: pointer;
 }
 
 hr{
@@ -86,11 +87,11 @@ p.lefty{
 
 /* Home */
 
-.homeBody{
+.homeBackground{
 	background-image: url(../dinnerplanner-html/images/Food-Image.jpg);
 	background-size: 100%;
 }
-#homeHeader{
+.homeHeader{
 	background-color: rgba(250, 206, 120, 0.6);
 }
 #homeView{
