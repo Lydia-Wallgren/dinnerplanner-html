@@ -2,11 +2,9 @@
 var DishInfoViewController = function(view, model ) {
 	
 	view.confirmButton.click(function(){
-		//should come from select view
 		model.addDishToMenu(model.getFocusedDishId());
-		//console.log(model.getSelectedDish('starter'));
 		
-		window.changeStage("fullMenu");
+		window.changeStage("selection");
 	});
 	
 	view.backToSelectButton.click(function() {

@@ -2,7 +2,7 @@
 var MyDinnerBoxViewController = function(view, model) {
 	
 	view.confirmDinnerButton.click(function() {
-		window.changeStage("info");
+		window.changeStage("overView");
 	});
 	
 	view.numberOfPersonsSelector.change(function() {

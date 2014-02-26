@@ -14,14 +14,15 @@
 
   </head>
   <body id="homeBody" class="homeBackground">
-	<!-- Fix Header -->
 	
+	<!-- Fix Header -->
 	<div class="header homeHeader" id="mainHeaderView">
 		<div class="container" id="headerTitle">
 			<h1>Homelette <small><em class="emH">From the best chefs in the world directly in to your kitchen</em></small></h1>
 		</div>
 		<hr/>
 	</div>
+	<!-- /Fix Header -->
 	
 	<!-- AllPageViews -->
 	
@@ -108,6 +109,44 @@
 		</div>
 	</div>
 	<!-- /MyDinnerBoxView -->
+	
+	<!-- SelectDishView -->
+	<div class ="col-md-9" id= "selectDish" hidden>
+		<div class="row">
+			<hr class="select-dish"/>
+		</div>
+		<div class="row search_form">
+			<div class ="col-md-12">
+				<h4>SELECT DISH</h4>
+				<hr class="select"/>
+				<div class="row dish_form">
+					<div class="col-md-5">
+						<div class="input-group">
+							<input type="text" class="form-control" id="searchText">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" id="searchButton">
+									<span class="glyphicon glyphicon-search"></span> Search
+								</button>
+							</span>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<select class="form-control" id="courseSelect">
+							<option>Filter by course</option>
+							<option>Starter</option>
+							<option>Main Course</option>
+							<option>Dessert</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<hr/>
+				</div>
+			</div>
+		</div>
+		<div class="containter" id="dishList" />
+	</div>
+	<!-- /SelectDishView -->
 
 	<!-- DishInfoView -->
 	<div id="dishInfoView" class="col-md-9 orange" hidden>
@@ -122,16 +161,16 @@
 					</div>
 				</div>
 				<img id='infoImg'>
-				<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</em></p>
+				<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+					 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+					 commodo consequat.</em></p>
 				<h2>Preparation</h2>
 				<p id='infoPrep' />
 			</div>
 			<div class="col-md-6 ingredients">
 				<h4 id='ingrediensForPeople'>Ingredients for people</h4>
 				<hr/>
-				<div class="row" id="ingredients">
-					
-				</div>
+				<div class="row" id="ingredients" />
 				<hr class="select" />
 				<div class="row">
 					<div class="col-md-8">
@@ -146,6 +185,59 @@
 		</div>
 	</div>
 	<!-- /DishInfoView -->
+	
+	<!-- OverView -->
+	<div id='overView' hidden>
+		<div class="homeHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12" id="myDinnerHeader">
+						<div class="col-md-6">
+							<h3 id="homeViewH2"></h3>
+						</div>
+						<div class="pull-right">
+							<button id="backToEdit" class="btn mybtn">Go back and edit dinner</button>
+						</div>
+					</div>
+				</div>
+			</div>  
+			<hr class="under"/>
+		</div>
+	
+		<div class="container">
+			<div class="row">
+				<div id="starterdiv">
+					<img class="imageStyle" id="starterImg">
+					<p class="underPic" id="starterName">Starter</p>
+					<p class="red textcenter" id="starterPrice">0 SEK</p> 
+				</div> 
+				<div id="maindishdiv">
+					<img class="imageStyle" id="mainImg">
+					<p class="underPic" id="mainName">Main</p>
+					<p class="red textcenter" id="mainPrice">0 SEK</p> 
+				</div> 
+				<div id="dessertdiv">
+					<img class="imageStyle" id="dessertImg">
+					<p class="underPic" id="dessertName">Dessert</p>
+					<p class="red textcenter" id="dessertPrice">0 SEK</p> 
+				</div> 
+				<div id="lefttotaldiv">
+					<hr class="vertical"/>
+					<div class="col-md-2">
+						<p class="lefty">Total:</p>
+						<p class="red" id="totalPrice">0 SEK</p>
+					</div>
+				</div>
+			</div>
+			<hr/>
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5">
+					<button id="goToFullMenu" class="btn mybtn">Print Full Recipe</button>
+				</div>
+			</div> 
+		</div>
+	</div>
+	<!-- /OverView -->
 	
 	<!-- FullMenuView -->
 	<div id="fullMenuView" hidden>
@@ -235,5 +327,9 @@
 	<script src="js/view/myDinnerBoxViewController.js"></script>
 	<script src="js/view/dishInfoView.js"></script>
 	<script src="js/view/dishInfoViewController.js"></script>
+	<script src="js/view/selectView.js"></script>
+	<script src="js/view/selectViewController.js"></script>
+	<script src="js/view/overView.js"></script>
+	<script src="js/view/overViewController.js"></script>
   </body>
 </html>

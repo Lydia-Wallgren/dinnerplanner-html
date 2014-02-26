@@ -6,7 +6,7 @@ var OverViewController = function(view, model ) {
 	});
 
 	view.backToEdit.click(function() {
-		window.changeStage("select");
+		window.changeStage("selection");
 	});
 
 }

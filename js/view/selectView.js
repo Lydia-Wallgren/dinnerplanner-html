@@ -47,7 +47,7 @@ var SelectView = function (container,model) {
 			//img tag
 			this.image=$("<img>");
 			this.image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
-			this.image.attr("class", "imageStyle");
+			this.image.attr("class", "imageStyle clickable");
 
 			//p tag
 			this.imageText=$("<p>");

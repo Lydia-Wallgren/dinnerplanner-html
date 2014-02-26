@@ -18,20 +18,27 @@ $(function() {
 	var myDinnerBoxView = new MyDinnerBoxView($("#myDinnerBoxView"), model);
 	var myDinnerBoxViewController = new MyDinnerBoxViewController(myDinnerBoxView, model);
 	
+	var selectView = new SelectView($('#selectDish'), model);
+	var selectViewController = new SelectViewController(selectView, model);
+	
 	var dishInfoView = new DishInfoView($("#dishInfoView"), model);
 	var dishInfoViewController = new DishInfoViewController(dishInfoView, model);
+	
+	var overView = new OverView($("#overView"),model);
+	var overViewController = new OverViewController(overView,model);
 	
 	var fullMenuView = new FullMenuView($("#fullMenuView"), model);
 	var fullMenuViewController = new FullMenuViewController(fullMenuView, model);
 	
-	//var overView = new OverView($("#overView"),model);
-	//var overViewController = new OverViewController(overView,model);
+	
 	
 	window.stageStyleUpdates = [mainHeaderView];
 	window.stageVisibilities = [[$("#homeBackground"), ["home"]],
 								[$("#homeView"), ["home"]],
 								[$("#myDinnerBoxView"), ["selection", "info"]],
+								[$("#selectDish"), ["selection"]],
 								[$("#dishInfoView"), ["info"]],
+								[$("#overView"), ["overView"]],
 								[$("#fullMenuView"), ["fullMenu"]]
 								];
 	
@@ -61,16 +68,5 @@ $(function() {
 		
 		window.stage = stage;
 
-	};
-	//var selectView = new SelectView($('#selectDish'), model);
-	//var selectViewController = new SelectViewController(selectView, model);
-
-
-	//var overView = new OverView($("#overView"),model);
-	//var overViewController = new OverViewController(overView,model);
-	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
-	//var dishInfoView = new DishInfoView($("#dishInfo"),model);
-	//var dishInfoController = new DishInfoViewController(dishInfoView,model);
-
-	
+	}
 });
