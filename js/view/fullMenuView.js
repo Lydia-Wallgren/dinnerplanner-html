@@ -2,6 +2,7 @@
 var FullMenuView = function (container,model) {
 	
 	this.container = container;
+	this.backToEditButton = container.find("#backToEditButton");
 	
 	//we set the constant text
 	var homeViewH2 = container.find("#homeViewH2");

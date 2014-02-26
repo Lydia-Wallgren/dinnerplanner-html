@@ -23,15 +23,88 @@
 		<hr/>
 	</div>
 	
-	<!-- Diferent views -->
+	<!-- AllPageViews -->
 	
+	<!-- HomeView -->
 	<div class="col-md-6" id="homeView"> 
 		<h2 id="homeViewH2"></h2>
 		<hr id="myLine">
 		<p id="homeViewP"></p>
 		<button id="createDinnerButton" class="btn mybtn">Create new dinner</button>
 	</div>
+	<!-- /HomeView -->
 	
+	<!-- MyDinnerBoxView -->
+	<div id="myDinnerBoxView" class ="col-md-3 myDinnerBox" hidden>
+		<h2>My Dinner</h2>
+		<div class="row">
+			<div class ="col-md-4">
+				<p>People</p>
+			</div>
+			<div class ="col-md-4">
+				<select id="numberOfPersons" class="form-control">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr/>
+			<div class ="col-md-6">
+				<div class="pull left">
+					<h5>Dish Name</h5>
+				</div>
+			</div>
+			<div class ="col-md-6">
+				<div class="pull-right">
+					<h5>Cost</h5>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<hr class="select"/>
+			<div id="dishListView">
+				<!-- DishListItemView
+				<div class="row">
+					<hr class="select"/>
+					<div class ="col-md-6">
+						<div class="pull left">
+							<p>_______</p>
+						</div>
+					</div>
+					<div class ="col-md-6">
+						<div class="pull-right">
+							<p>0.0 SEK</p>
+						</div>
+					</div>
+				</div>
+				-->
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12 container">
+				<hr class= "select"/>
+				<div class="pull-right">
+					<p>0.0 SEK </p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="text-center">
+				<button id="confirmDinnerButton" type="button" class="btn btn-default mybtn"> Comfirm Dinner </button>
+			</div>
+		</div>
+	</div>
+	<!-- /MyDinnerBoxView -->
+	
+	<!-- FullMenuView -->
 	<div id="fullMenuView" hidden>
 		<div id ="fullMenuHeader" class="homeHeader">
 			<div class="container">
@@ -41,7 +114,7 @@
 							<h3 id="homeViewH2">My Dinner</h3>
 						</div>
 						<div class="pull-right">
-							<button id="backToEdit" class="btn mybtn">Go back and edit dinner</button>
+							<button id="backToEditButton" class="btn mybtn">Go back and edit dinner</button>
 						</div>
 					</div>
 				</div>
@@ -91,6 +164,9 @@
 			</div> 
 		</div>
 	</div>
+	<!-- /FullMenuView -->
+	
+	<!-- /AllPageViews -->
 	
 	<!-- JAVASCRIPTS -->
 
@@ -110,5 +186,7 @@
 	<script src="js/view/homeViewController.js"></script>
 	<script src="js/view/fullMenuView.js"></script>
 	<script src="js/view/fullMenuViewController.js"></script>
+	<script src="js/view/myDinnerBoxView.js"></script>
+	<script src="js/view/myDinnerBoxViewController.js"></script>
   </body>
 </html>
