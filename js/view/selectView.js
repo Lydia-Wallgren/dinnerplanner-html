@@ -8,10 +8,12 @@ var SelectView = function (container,model) {
 	this.selectDish = container.find("#selectDish");
 
 	this.sButton = container.find("#searchButton");
+	this.dSelect = container.find("#courseSelect")
 
 
 
 	this.refreshView = function(type, filter){
+		this.dishList.empty();
 
 
 		if(type == "Filter by course"){
@@ -65,7 +67,7 @@ var SelectView = function (container,model) {
 
 	}
 
-	//this.refreshView("Filter by course", "");
+	this.refreshView("Filter by course", "");
 
 
 }
