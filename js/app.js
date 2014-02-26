@@ -5,7 +5,10 @@ $(function() {
 	
 	//We instantiate our model
 	var model = new DinnerModel();
-	
+
+	var dl = new SelectView($("#dishList"),model);
+	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
+	/*
 	//And create the needed controllers and views
 	/*var mainHeaderView = new MainHeaderView($("#mainHeaderView"),model);
 	var mainHeaderViewController = new MainHeaderViewController(mainHeaderView,model);

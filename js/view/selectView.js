@@ -3,7 +3,24 @@ var SelectView = function (container,model) {
 	
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
-	this.dishList = container.find("#dishList");
+
+
+this.dishList = container.find("#dishList");
+
+//this.refreshView = function(type, filter){
+
+
+
+	var dishes = model.getAllDishes("starter");
+	var dishes2;
+	dishes2 = $.merge(dishes, model.getAllDishes("main dish"));
+	dishes2 = $.merge(dishes2, model.getAllDishes("dessert"));
+
+	console.log(dishes);
+	console.log(dishes.length);
+	console.log(dishes[1].name);
+	console.log(dishes[1].image);
+
 
 
 	/*
@@ -13,20 +30,37 @@ var SelectView = function (container,model) {
 			<p class="under-pic-dl" id="dessertName">Dessert</p>
 		</div>
 	</div>
-					*/ 
+	*/ 
 	var row = $("<div>");
 	row.addClass("row text-center");
-	for (i=0; i<model.Dishes.length; i++){
+	for (i=0; i < dishes.length; i++){
 		this.dishPreview=$("<div>");
+
 		this.dishPreview.attr("id","dishPreview");
+
 		this.dishPreview.attr("class","col-md-3");
-		
 
 
+		this.image=$("<img>");
+		this.image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
+
+		this.imageText=$("<p>");
+		this.imageText.attr("class", "under-pic-dl");
+		this.imageText.html(dishes[i].name);
+
+
+
+		row.append(this.dishPreview);
+		this.dishPreview.append(this.image);
+		this.dishPreview.append(this.imageText);
 
 	}
+	container.append(row);
 
+//}
+//	refreshView("Filter by course", "");
 
+/*
 	//div we just store in temporary variable because we won't need it later
 	var div = $("<div>");
 	//we set the constant text
@@ -50,8 +84,8 @@ var SelectView = function (container,model) {
 	
 	/*****************************************  
 	      Observer implementation    
-	*****************************************/
-	
+	      *****************************************/
+	/*
 	//Register an observer to the model
 	model.addObserver(this);
 	
@@ -59,6 +93,7 @@ var SelectView = function (container,model) {
 	this.update = function(arg){
 		this.numberOfGuests.html(model.getNumberOfGuests());
 		this.totalPrice.html(model.getTotalMenuPrice());
-	}
+	}*/
+
 }
- 
+

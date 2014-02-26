@@ -148,7 +148,7 @@ var DinnerModel = function() {
 			}]
 		},{
 		'id':2,
-		'name':'Sourdough Starter',
+		'name':'Sourdough',
 		'type':'starter',
 		'image':'sourdough.jpg',
 		'description':"Here is how you make it... Lore ipsum...",
