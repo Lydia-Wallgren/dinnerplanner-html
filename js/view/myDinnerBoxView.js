@@ -2,8 +2,9 @@
 var MyDinnerBoxView = function(container, model ) {
 
 	this.confirmDinnerButton = container.find("#confirmDinnerButton");
-	this.totalCost = container.find("#totalCost");
+	this.totalCost = container.find("#myMenuPrice");
 	this.dishListView = container.find("#dishListView");
+	this.numberOfPersonsSelector = container.find("#numberOfPersons");
 	
 	this.refreshView = function () {
 		this.dishListView.empty();
@@ -57,7 +58,7 @@ var MyDinnerBoxView = function(container, model ) {
 			this.dishListView.append(dessertSEK);
 		}
 		
-		this.totalCost.html('SEK ' + model.getTotalMenuPrice());
+		this.totalCost.html(model.getTotalMenuPrice().toFixed(1) + " SEK");
 	}
 	
 	/*****************************************  
@@ -69,8 +70,6 @@ var MyDinnerBoxView = function(container, model ) {
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
-		//this.selectedDish.html(model.getNumberOfGuests());
-		//this.totalPrice.html(model.getTotalMenuPrice());
 		this.refreshView();
 	}
 	

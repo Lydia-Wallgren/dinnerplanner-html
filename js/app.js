@@ -37,8 +37,7 @@ $(function() {
 								];
 	
 	window.changeStage = function(stage) {
-		console.debug("Changing to stage: "+stage);
-		
+				
 		// Change Styles
 		for (var i = 0; i < window.stageStyleUpdates.length; ++i) {
 			window.stageStyleUpdates[i].updateStyle(stage);

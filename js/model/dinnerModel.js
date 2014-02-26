@@ -47,7 +47,7 @@ var DinnerModel = function() {
 		var ingredients = this.getAllIngredients();
 		var sum = 0.;
 		for(key in ingredients) {
-			sum += parseFloat(ingredients[key].price) * this.getNumberOfGuests();
+			sum += ingredients[key].price * this.getNumberOfGuests();
 		}
 		return sum;
 	}

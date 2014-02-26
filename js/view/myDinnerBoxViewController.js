@@ -5,4 +5,8 @@ var MyDinnerBoxViewController = function(view, model) {
 		window.changeStage("info");
 	});
 	
+	view.numberOfPersonsSelector.change(function() {
+		model.setNumberOfGuests(this.value);
+	});
+	
 }
