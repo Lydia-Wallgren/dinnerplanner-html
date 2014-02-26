@@ -6,10 +6,12 @@ var DishInfoViewController = function(view, model ) {
 		var id = 1;
 		model.addDishToMenu(id);
 		//console.log(model.getSelectedDish('starter'));
+		
+		window.changeStage("fullMenu");
 	});
 	
 	view.backToSelectButton.click(function() {
-		window.changeStage("select");
+		window.changeStage("selection");
 	});
 
 }

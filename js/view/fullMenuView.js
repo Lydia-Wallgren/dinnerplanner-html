@@ -55,6 +55,8 @@ var FullMenuView = function (container,model) {
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
 		this.fillFullMenu();
+		
+		
 	}
 }
  

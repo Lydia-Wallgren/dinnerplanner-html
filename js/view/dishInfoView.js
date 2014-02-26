@@ -3,9 +3,6 @@ var DishInfoView = function (container,model) {
 	//setting upp buttons
 	this.confirmButton = container.find('#confirmDish');
 	this.backToSelectButton= container.find('#backToSelect');
-
-	//setting upp div-id
-	this.confirmDish = container.find('#confirmDish');
 	this.ingredientDiv = container.find('#ingredients');
 
 	//this.

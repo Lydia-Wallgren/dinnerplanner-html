@@ -1,7 +1,7 @@
 $(function() {
 	//The global variable so we can access it from other controller and views
 	window.stage = "home";
-	// Stages: home selection fullMenu
+	// Stages: home selection info fullMenu
 	
 	//We instantiate our model
 	var model = new DinnerModel();
@@ -19,6 +19,9 @@ $(function() {
 	var myDinnerBoxView = new MyDinnerBoxView($("#myDinnerBoxView"), model);
 	var myDinnerBoxViewController = new MyDinnerBoxViewController(myDinnerBoxView, model);
 	
+	var dishInfoView = new DishInfoView($("#dishInfoView"), model);
+	var dishInfoViewController = new DishInfoViewController(dishInfoView, model);
+	
 	var fullMenuView = new FullMenuView($("#fullMenuView"), model);
 	var fullMenuViewController = new FullMenuViewController(fullMenuView, model);
 	
@@ -28,7 +31,8 @@ $(function() {
 	window.stageStyleUpdates = [mainHeaderView];
 	window.stageVisibilities = [[$("#homeBackground"), ["home"]],
 								[$("#homeView"), ["home"]],
-								[$("#myDinnerBoxView"), ["selection"]],
+								[$("#myDinnerBoxView"), ["selection", "info"]],
+								[$("#dishInfoView"), ["info"]],
 								[$("#fullMenuView"), ["fullMenu"]]
 								];
 	
