@@ -16,8 +16,12 @@ var SelectView = function (container,model) {
 					*/ 
 	var row = $("<div>");
 	row.addClass("row text-center");
-	for (i=0; i<model.dishList.length; i++){
+	for (i=0; i<model.Dishes.length; i++){
+		this.dishPreview=$("<div>");
+		this.dishPreview.attr("id","dishPreview");
+		this.dishPreview.attr("class","col-md-3");
 		
+
 
 
 	}
@@ -41,6 +45,8 @@ var SelectView = function (container,model) {
 	//Set the inital values of the components
 	this.numberOfGuests.html(model.getNumberOfGuests());
 	this.totalPrice.html(model.getTotalMenuPrice());
+
+	
 	
 	/*****************************************  
 	      Observer implementation    
