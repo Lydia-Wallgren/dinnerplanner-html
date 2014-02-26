@@ -6,7 +6,6 @@ $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
 
-	//var dl = new SelectView($("#dishList"),model);
 	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
 	
 	//And create the needed controllers and views
@@ -61,5 +60,17 @@ $(function() {
 		}
 		
 		window.stage = stage;
-	}
+
+	};
+	//var selectView = new SelectView($('#selectDish'), model);
+	//var selectViewController = new SelectViewController(selectView, model);
+
+
+	//var overView = new OverView($("#overView"),model);
+	//var overViewController = new OverViewController(overView,model);
+	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
+	//var dishInfoView = new DishInfoView($("#dishInfo"),model);
+	//var dishInfoController = new DishInfoViewController(dishInfoView,model);
+
+	
 });
