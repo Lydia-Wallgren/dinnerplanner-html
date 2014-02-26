@@ -8,7 +8,7 @@ var DishInfoView = function (container,model) {
 	//this.
 	this.fillDishInfo = function(dish){
 		//selectedDish hard-coded right now	
-		var selectedDish = model.getDish(100);
+		var selectedDish = model.getDish(dish);
 		container.find('#dishName').html(selectedDish.name);
 		container.find("#infoImg").attr('src','../dinnerplanner-html/images/' + selectedDish.image);
 		container.find("#infoPrep").html(selectedDish.description);
@@ -50,14 +50,14 @@ var DishInfoView = function (container,model) {
 		container.find('#totalCost').html(model.getDishPrice(selectedDish.ingredients));
 	}
 
-	this.fillDishInfo('');
+	this.fillDishInfo(model.getFocusedDishId());
 	//Register an observer to the model
 	model.addObserver(this);
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
 		this.ingredientDiv.empty();
-		this.fillDishInfo('');
+		this.fillDishInfo(model.getFocusedDishId());
 	}
 
 }

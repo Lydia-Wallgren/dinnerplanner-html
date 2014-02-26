@@ -2,10 +2,20 @@
 var DinnerModel = function() {
  
 	var menu = [];
-	var numberOfGuests =3; //set default number of guests
+	var numberOfGuests = 1; //set default number of guests
 	menu['starter'] = 1; //set a starter to the menu, to use for testing
 	menu['main dish'] = 100;
 	menu['dessert'] = 200;
+	
+	var focusedDishId = 1; //used to update the views
+	
+	this.setFocusedDishId = function (id) {
+		focusedDishId = id;
+	}
+
+	this.getFocusedDishId = function () {
+		return focusedDishId;
+	}
 
 	this.setNumberOfGuests = function(num) {
 		if(num>0) {
