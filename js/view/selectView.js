@@ -1,4 +1,3 @@
-//ExampleView Object constructor
 var SelectView = function (container,model) {
 	
 	// Get all the relevant elements of the view (ones that show data
@@ -6,9 +5,14 @@ var SelectView = function (container,model) {
 
 
 	this.dishList = container.find("#dishList");
+	this.selectDish = container.find("#selectDish");
+
+	this.sButton = container.find("#searchButton");
+
 
 
 	this.refreshView = function(type, filter){
+
 
 		if(type == "Filter by course"){
 			var dishes = $.merge( $.merge(model.getAllDishes("starter", filter), model.getAllDishes("main dish", filter)) ,model.getAllDishes("dessert", filter));
@@ -22,10 +26,6 @@ var SelectView = function (container,model) {
 		if(type == "Dessert"){
 			var dishes = model.getAllDishes("dessert", filter);
 		}
-
-
-
-
 		/*
 		<div class= "row text-center">
 			<div class= "col-md-3" id="dishPreview">
@@ -58,11 +58,14 @@ var SelectView = function (container,model) {
 			this.dishPreview.append(this.imageText);
 
 		}
-		container.append(row);
+		this.dishList.append(row);
+
+		model.addObserver(this);
+
 
 	}
 
-	this.refreshView("Filter by course", "");
+	//this.refreshView("Filter by course", "");
 
 
 }
