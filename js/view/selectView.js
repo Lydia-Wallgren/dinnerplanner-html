@@ -62,13 +62,15 @@ var SelectView = function (container,model) {
 		}
 		this.dishList.append(row);
 
-		model.addObserver(this);
-
-
 	}
 
 	this.refreshView("Filter by course", "");
-
+	
+	model.addObserver(this);
+	//This function gets called when there is a change at the model
+	this.update = function(arg){
+		
+	}
 
 }
 
