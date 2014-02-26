@@ -69,7 +69,7 @@ var MyDinnerBoxView = function(container, model ) {
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
-		this.selectedDish.html(model.getNumberOfGuests());
+		//this.selectedDish.html(model.getNumberOfGuests());
 		//this.totalPrice.html(model.getTotalMenuPrice());
 		this.refreshView();
 	}

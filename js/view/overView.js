@@ -1,6 +1,10 @@
 //ExampleView Object constructor
 var OverView = function (container,model) {
 	
+	this.backToEdit = container.find('#backToEdit');
+	this.goToFullMenu = container.find('#goToFullMenu');
+
+	
 	//function to set the columns 
 	var addkolum = function (a,b,c){
 		//only one dish selected
@@ -9,7 +13,7 @@ var OverView = function (container,model) {
 		}
 		//all dish selected
 		else if(b != null && c != null){
-			if(a == starterDish){
+			if(a == model.getDish(model.getSelectedDish('starter'))){
 				return "col-md-2 col-md-offset-3";
 			}
 			else{
@@ -18,74 +22,78 @@ var OverView = function (container,model) {
 		}
 		//two selected
 		else{
-			if(a == dessertDish){
+			if(a == model.getDish(model.getSelectedDish('dessert'))){
 				return "col-md-2";
 			}
-			else if(a == starterDish){
+			else if(a == model.getDish(model.getSelectedDish('starter'))){
 				return "col-md-2 col-md-offset-4";
 			}
-			else if(a == mainDish && b == null){
+			else if(a == model.getDish(model.getSelectedDish('main dish')) && b == null){
 				return "col-md-2 col-md-offset-4";
 			}
-			else if(a == mainDish && b != null){
+			else if(a == model.getDish(model.getSelectedDish('main dish')) && b != null){
 				return "col-md-2";
 			}
 		}
 	}
 	
-	//we set the constant text	
-	var homeViewH2 = container.find("#homeViewH2");
-	homeViewH2.html("<b>My Dinner: " + model.getNumberOfGuests() + " people</b>");
+	this.fillOverView = function(){
 
-	//getting dish from model
-	var starterDish = model.getDish(model.getSelectedDish('starter'));
-	var mainDish = model.getDish(model.getSelectedDish('main dish'));
-	var dessertDish = model.getDish(model.getSelectedDish('dessert'));
-	
-	//starter
-	if(starterDish == null){
-		container.find("#starterdiv").hide();
-	}
-	else{
-		container.find("#starterImg").attr('src','../dinnerplanner-html/images/' + starterDish.image);
-		container.find("#starterName").html(starterDish.name);
-		container.find('#starterPrice').html(model.getDishPrice(starterDish.ingredients) + " SEK");
-		var kol = addkolum(starterDish,mainDish,dessertDish);
-		container.find("#starterdiv").addClass(kol);
-	}
-	
-	//main
-	if(mainDish == null){
-		container.find("#maindishdiv").hide();
-	}
-	else{
-		container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + mainDish.image);
-		container.find("#mainName").html(mainDish.name);
-		container.find('#mainPrice').html(model.getDishPrice(mainDish.ingredients) + " SEK");
-		var kol = addkolum(mainDish,starterDish,dessertDish);
-		container.find("#maindishdiv").addClass(kol);
-	}
-	
-	//dessert
-	if(dessertDish == null){
-		container.find("#dessertdiv").hide();
-	}
-	else{
-		container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + dessertDish.image);
-		container.find("#dessertName").html(dessertDish.name);
-		container.find('#dessertPrice').html(model.getDishPrice(dessertDish.ingredients) + " SEK");
-		var kol = addkolum(dessertDish,starterDish,mainDish);
-		container.find('#dessertdiv').addClass(kol);
-	}
+		//we set the constant text	
+		var homeViewH2 = container.find("#homeViewH2");
+		homeViewH2.html("<b>My Dinner: " + model.getNumberOfGuests() + " people</b>");
 
-	//if no dish is selected
-	if(starterDish == null && mainDish == null && dessertDish == null){
-		container.find('#lefttotaldiv').addClass('col-md-offset-7');
+		//getting dish from model
+		this.starterDish = model.getDish(model.getSelectedDish('starter'));
+		this.mainDish = model.getDish(model.getSelectedDish('main dish'));
+		this.dessertDish = model.getDish(model.getSelectedDish('dessert'));
+		
+		//starter
+		if(this.starterDish == null){
+			container.find("#starterdiv").hide();
+		}
+		else{
+			container.find("#starterImg").attr('src','../dinnerplanner-html/images/' + this.starterDish.image);
+			container.find("#starterName").html(this.starterDish.name);
+			container.find('#starterPrice').html(model.getDishPrice(this.starterDish.ingredients) + " SEK");
+			var kol = addkolum(this.starterDish,this.mainDish,this.dessertDish);
+			container.find("#starterdiv").addClass(kol);
+		}
+		
+		//main
+		if(this.mainDish == null){
+			container.find("#maindishdiv").hide();
+		}
+		else{
+			container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + this.mainDish.image);
+			container.find("#mainName").html(this.mainDish.name);
+			container.find('#mainPrice').html(model.getDishPrice(this.mainDish.ingredients) + " SEK");
+			var kol = addkolum(this.mainDish,this.starterDish,this.dessertDish);
+			container.find("#maindishdiv").addClass(kol);
+		}
+		
+		//dessert
+		if(this.dessertDish == null){
+			container.find("#dessertdiv").hide();
+		}
+		else{
+			container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + this.dessertDish.image);
+			container.find("#dessertName").html(this.dessertDish.name);
+			container.find('#dessertPrice').html(model.getDishPrice(this.dessertDish.ingredients) + " SEK");
+			var kol = addkolum(this.dessertDish,this.starterDish,this.mainDish);
+			container.find('#dessertdiv').addClass(kol);
+		}
+
+		//if no dish is selected
+		if(this.starterDish == null && this.mainDish == null && this.dessertDish == null){
+			container.find('#lefttotaldiv').addClass('col-md-offset-7');
+		}
+		
+		//set total price
+		container.find('#totalPrice').html(model.getTotalMenuPrice() + " SEK");
 	}
 	
-	//set total price
-	container.find('#totalPrice').html(model.getTotalMenuPrice() + " SEK");
-	
+	this.fillOverView();
 	/*****************************************  
 	      Observer implementation    
 	*****************************************/
@@ -95,8 +103,7 @@ var OverView = function (container,model) {
 	
 	//This function gets called when there is a change at the model
 	this.update = function(arg){
-		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalPrice.html(model.getTotalMenuPrice());
+		this.fillOverView();
 	}
 }
  

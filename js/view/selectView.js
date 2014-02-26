@@ -5,95 +5,65 @@ var SelectView = function (container,model) {
   	// and/or ones that responed to interaction)
 
 
-this.dishList = container.find("#dishList");
-
-//this.refreshView = function(type, filter){
+	this.dishList = container.find("#dishList");
 
 
+	this.refreshView = function(type, filter){
 
-	var dishes = model.getAllDishes("starter");
-	var dishes2;
-	dishes2 = $.merge(dishes, model.getAllDishes("main dish"));
-	dishes2 = $.merge(dishes2, model.getAllDishes("dessert"));
+		if(type == "Filter by course"){
+			var dishes = $.merge( $.merge(model.getAllDishes("starter", filter), model.getAllDishes("main dish", filter)) ,model.getAllDishes("dessert", filter));
+		}
+		if(type == "Starter"){
+			var dishes = model.getAllDishes("starter", filter);
+		}
+		if(type == "Main Course"){
+			var dishes = model.getAllDishes("main dish", filter);
+		}
+		if(type == "Dessert"){
+			var dishes = model.getAllDishes("dessert", filter);
+		}
 
-	console.log(dishes);
-	console.log(dishes.length);
-	console.log(dishes[1].name);
-	console.log(dishes[1].image);
 
 
 
-	/*
-	<div class= "row text-center">
-		<div class= "col-md-3" id="dishPreview">
-			<img src="../dinnerplanner-html/images/meatballs.jpg" class="imageStyle" id="dessertImg">
-			<p class="under-pic-dl" id="dessertName">Dessert</p>
+		/*
+		<div class= "row text-center">
+			<div class= "col-md-3" id="dishPreview">
+				<img src="../dinnerplanner-html/images/meatballs.jpg" class="imageStyle" id="dessertImg">
+				<p class="under-pic-dl" id="dessertName">Dessert</p>
+			</div>
 		</div>
-	</div>
-	*/ 
-	var row = $("<div>");
-	row.addClass("row text-center");
-	for (i=0; i < dishes.length; i++){
-		this.dishPreview=$("<div>");
+		*/ 
+		var row = $("<div>");
+		row.addClass("row text-center");
+		for (i=0; i < dishes.length; i++){
+			//dishPreview div
+			this.dishPreview=$("<div>");
+			this.dishPreview.attr("id","dishPreview");
+			this.dishPreview.attr("class","col-md-3");
 
-		this.dishPreview.attr("id","dishPreview");
+			//img tag
+			this.image=$("<img>");
+			this.image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
+			this.image.attr("class", "imageStyle");
 
-		this.dishPreview.attr("class","col-md-3");
+			//p tag
+			this.imageText=$("<p>");
+			this.imageText.html(dishes[i].name);
+			this.imageText.attr("class", "under-pic-dl");
 
+			//appending everything
+			row.append(this.dishPreview);
+			this.dishPreview.append(this.image);
+			this.dishPreview.append(this.imageText);
 
-		this.image=$("<img>");
-		this.image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
-
-		this.imageText=$("<p>");
-		this.imageText.attr("class", "under-pic-dl");
-		this.imageText.html(dishes[i].name);
-
-
-
-		row.append(this.dishPreview);
-		this.dishPreview.append(this.image);
-		this.dishPreview.append(this.imageText);
+		}
+		container.append(row);
 
 	}
-	container.append(row);
 
-//}
-//	refreshView("Filter by course", "");
+	this.refreshView("Filter by course", "");
 
-/*
-	//div we just store in temporary variable because we won't need it later
-	var div = $("<div>");
-	//we set the constant text
-	div.html("Total menu price ");
-	//and we add the text-primary class to make it blue
-	div.addClass("text-primary");
-	//total price we store in object variable (using this) so we can access it later
-	this.totalPrice = $("<span>");
-	//we set the id of the total price span
-	this.totalPrice.attr("id","totalPrice");
-	//we add total price span to the div
-	div.append(this.totalPrice);
-	//finally we add the div to the view container
-	container.append(div);
-	
-	//Set the inital values of the components
-	this.numberOfGuests.html(model.getNumberOfGuests());
-	this.totalPrice.html(model.getTotalMenuPrice());
-
-	
-	
-	/*****************************************  
-	      Observer implementation    
-	      *****************************************/
-	/*
-	//Register an observer to the model
-	model.addObserver(this);
-	
-	//This function gets called when there is a change at the model
-	this.update = function(arg){
-		this.numberOfGuests.html(model.getNumberOfGuests());
-		this.totalPrice.html(model.getTotalMenuPrice());
-	}*/
 
 }
 

@@ -22,6 +22,9 @@ $(function() {
 	var fullMenuView = new FullMenuView($("#fullMenuView"), model);
 	var fullMenuViewController = new FullMenuViewController(fullMenuView, model);
 	
+	//var overView = new OverView($("#overView"),model);
+	//var overViewController = new OverViewController(overView,model);
+	
 	window.stageStyleUpdates = [mainHeaderView];
 	window.stageVisibilities = [[$("#homeBackground"), ["home"]],
 								[$("#homeView"), ["home"]],
@@ -55,8 +58,5 @@ $(function() {
 		}
 		
 		window.stage = stage;
-	};
-	
-	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
-	//var dishInfoView = new DishInfoView($("#dishInfo"),model);
+	}
 });
