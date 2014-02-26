@@ -7,7 +7,7 @@ $(function() {
 	var model = new DinnerModel();
 	
 	//And create the needed controllers and views
-	var mainHeaderView = new MainHeaderView($("#mainHeaderView"),model);
+	/*var mainHeaderView = new MainHeaderView($("#mainHeaderView"),model);
 	var mainHeaderViewController = new MainHeaderViewController(mainHeaderView,model);
 
 	var homeView = new HomeView($("#homeView"),model);
@@ -48,8 +48,8 @@ $(function() {
 		}
 		
 		window.stage = stage;
-	};
+	};*/
 	
-	//var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
-	//var dishInfoView = new DishInfoView($("#dishInfo"),model);
+	var myDinnerBox = new myDinnerBoxView($("#myDinnerBox"),model);
+	var dishInfoView = new DishInfoView($("#dishInfo"),model);
 });

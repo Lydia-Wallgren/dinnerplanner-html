@@ -15,7 +15,7 @@ var DinnerModel = function() {
 	}
 
 	this.getNumberOfGuests = function() {
-		return parseInt(numberOfGuests);
+		return numberOfGuests;
 	}
 
 	//Returns the dish that is on the menu for selected type 
