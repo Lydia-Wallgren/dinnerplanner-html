@@ -24,6 +24,7 @@ var SelectView = function (container,model) {
 		if(type == "Dessert"){
 			var dishes = model.getAllDishes("dessert", filter);
 		}
+
 		/* Dish html to be created
 		<div class= "row text-center">
 			<div class= "col-md-3" id="dishPreview">
@@ -31,6 +32,7 @@ var SelectView = function (container,model) {
 				<p class="under-pic-dl" id="dessertName">Dessert</p>
 			</div>
 		</div>
+
 		*/ 
 		var row = $("<div>");
 		row.addClass("row text-center");
