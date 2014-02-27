@@ -182,7 +182,10 @@ div.select{
 	background-color: rgb(250, 120, 120);
 }
 
-
+.myDinnerRow{
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
 
 /* fullMenu */

@@ -1,4 +1,4 @@
-//ExampleView Object constructor
+//myDinnerBoxView Object constructor
 var MyDinnerBoxView = function(container, model ) {
 
 	this.confirmDinnerButton = container.find("#confirmDinnerButton");
@@ -11,10 +11,13 @@ var MyDinnerBoxView = function(container, model ) {
 		
 		var starter = model.getDish(model.getSelectedDish('starter'));
 		if (starter != null) {
+			var rowStarter = $("<div>");
+			rowStarter.addClass("row myDinnerRow");
 			var selectedStarter = $("<div>");
 			selectedStarter.addClass("col-md-6");
 			selectedStarter.html(starter.name);
-			this.dishListView.append(selectedStarter);
+
+			rowStarter.append(selectedStarter);
 			
 			var starterSEK = $("<div>");
 			starterSEK.addClass("col-md-6");	
@@ -31,19 +34,25 @@ var MyDinnerBoxView = function(container, model ) {
 
 			var spanStarter = $("<span>");
 			spanStarter.addClass("glyphicon glyphicon-remove-circle");
+			spanStarter.attr("id",starter.id);
 			
 			this.removeStarter.append(spanStarter);
 			starterCost.append(this.removeStarter);
 
-			this.dishListView.append(starterSEK);
+			rowStarter.append(starterSEK);
+
+			this.dishListView.append(rowStarter);
 
 		}
 		var main = model.getDish(model.getSelectedDish('main dish'));
 		if (main != null) {
+			var rowMain = $("<div>");
+			rowMain.addClass("row myDinnerRow");
 			var selectedMain = $("<div>");
 			selectedMain.addClass("col-md-6");
 			selectedMain.html(main.name);
-			this.dishListView.append(selectedMain);
+
+			rowMain.append(selectedMain);
 			
 			var mainSEK = $("<div>");
 			mainSEK.addClass("col-md-6");	
@@ -60,19 +69,24 @@ var MyDinnerBoxView = function(container, model ) {
 
 			var spanMain = $("<span>");
 			spanMain.addClass("glyphicon glyphicon-remove-circle");
+			spanMain.attr("id",main.id);
 			
 			this.removeMain.append(spanMain);
 			mainCost.append(this.removeMain);
 
-			this.dishListView.append(mainSEK);
-			console.log('main: + ' + this.removeMain);
+			rowMain.append(mainSEK);
+
+			this.dishListView.append(rowMain);
 		}
 		var dessert = model.getDish(model.getSelectedDish('dessert'));
 		if (dessert != null) {
+			var rowDessert = $("<div>");
+			rowDessert.addClass("row myDinnerRow");
 			var selectedDessert = $("<div>");
 			selectedDessert.addClass("col-md-6");
 			selectedDessert.html(dessert.name);
-			this.dishListView.append(selectedDessert);
+
+			rowDessert.append(selectedDessert);
 			
 			var dessertSEK = $("<div>");
 			dessertSEK.addClass("col-md-6");	
@@ -89,11 +103,13 @@ var MyDinnerBoxView = function(container, model ) {
 
 			var spanDessert = $("<span>");
 			spanDessert.addClass("glyphicon glyphicon-remove-circle");
+			spanDessert.attr("id",dessert.id);
 			
 			this.removeDessert.append(spanDessert);
 			dessertCost.append(this.removeDessert);
 
-			this.dishListView.append(dessertSEK);
+			rowDessert.append(dessertSEK);
+			this.dishListView.append(rowDessert);
 		}
 		
 		this.totalCost.html(model.getTotalMenuPrice().toFixed(1) + " SEK");

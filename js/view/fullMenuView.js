@@ -19,6 +19,7 @@ var FullMenuView = function (container,model) {
 			container.find("#starterdiv").hide();
 		}
 		else{
+			container.find("#starterdiv").show();
 			container.find("#starterImg").attr('src','../dinnerplanner-html/images/' + starterDish.image);
 			container.find("#starterName").html(starterDish.name);
 			container.find("#startertPrep").html(starterDish.description);
@@ -29,6 +30,7 @@ var FullMenuView = function (container,model) {
 			container.find("#maindishdiv").hide();
 		}
 		else{
+			container.find("#maindishdiv").show();
 			container.find("#mainImg").attr('src','../dinnerplanner-html/images/' + mainDish.image);
 			container.find("#mainName").html(mainDish.name);
 			container.find("#mainPrep").html(mainDish.description);
@@ -39,6 +41,7 @@ var FullMenuView = function (container,model) {
 			container.find("#dessertdiv").hide();
 		}
 		else{
+			container.find("#dessertdiv").show();
 			container.find("#dessertImg").attr('src','../dinnerplanner-html/images/' + dessertDish.image);
 			container.find("#dessertName").html(dessertDish.name);
 			container.find("#dessertPrep").html(dessertDish.description);
