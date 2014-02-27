@@ -25,10 +25,6 @@ var SelectView = function (container,model) {
 			var dishes = model.getAllDishes("dessert", filter);
 		}
 
-
-		/*
-		For placing out the images we make this 
-
 		/* Dish html to be created
 		<div class= "row text-center">
 			<div class= "col-md-3" id="dishPreview">
