@@ -23,7 +23,20 @@ var MyDinnerBoxView = function(container, model ) {
 			starterCost.html(model.getDishPrice(starter.ingredients));
 			
 			starterSEK.append(starterCost);
+
+			this.removeStarter = $("<button>");
+			this.removeStarter.attr("type","button");
+			this.removeStarter.addClass("btn removeBtn");
+			this.removeStarter.attr("id",starter.id);
+
+			var spanStarter = $("<span>");
+			spanStarter.addClass("glyphicon glyphicon-remove-circle");
+			
+			this.removeStarter.append(spanStarter);
+			starterCost.append(this.removeStarter);
+
 			this.dishListView.append(starterSEK);
+
 		}
 		var main = model.getDish(model.getSelectedDish('main dish'));
 		if (main != null) {
@@ -39,7 +52,20 @@ var MyDinnerBoxView = function(container, model ) {
 			mainCost.html(model.getDishPrice(main.ingredients));
 			
 			mainSEK.append(mainCost);
+			
+			this.removeMain = $("<button>");
+			this.removeMain.attr("type","button");
+			this.removeMain.addClass("btn removeBtn");
+			this.removeMain.attr("id",main.id);
+
+			var spanMain = $("<span>");
+			spanMain.addClass("glyphicon glyphicon-remove-circle");
+			
+			this.removeMain.append(spanMain);
+			mainCost.append(this.removeMain);
+
 			this.dishListView.append(mainSEK);
+			console.log('main: + ' + this.removeMain);
 		}
 		var dessert = model.getDish(model.getSelectedDish('dessert'));
 		if (dessert != null) {
@@ -55,6 +81,18 @@ var MyDinnerBoxView = function(container, model ) {
 			dessertCost.html(model.getDishPrice(dessert.ingredients));
 			
 			dessertSEK.append(dessertCost);
+			
+			this.removeDessert = $("<button>");
+			this.removeDessert.attr("type","button");
+			this.removeDessert.addClass("btn removeBtn");
+			this.removeDessert.attr("id",dessert.id);
+
+			var spanDessert = $("<span>");
+			spanDessert.addClass("glyphicon glyphicon-remove-circle");
+			
+			this.removeDessert.append(spanDessert);
+			dessertCost.append(this.removeDessert);
+
 			this.dishListView.append(dessertSEK);
 		}
 		

@@ -75,6 +75,7 @@ var DinnerModel = function() {
 		var type = this.getDish(id).type;
 		if(menu[type] == id) {
 			delete menu[type];
+			notifyObservers();
 		}
 	}
 
