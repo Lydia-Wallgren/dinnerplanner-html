@@ -1,4 +1,4 @@
-//ExampleView Object constructor
+//dishInfoView Object constructor
 var DishInfoView = function (container,model) {
 	//setting upp buttons
 	this.confirmButton = container.find('#confirmDish');

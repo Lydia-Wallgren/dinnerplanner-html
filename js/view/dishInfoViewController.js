@@ -1,4 +1,4 @@
-//ExampleViewController Object constructor
+//dishInfoViewController Object constructor
 var DishInfoViewController = function(view, model ) {
 	
 	view.confirmButton.click(function(){
