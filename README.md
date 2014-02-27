@@ -1,4 +1,4 @@
-Interaction Programing - Lab assignment - HTML
-=================================================
+Interaction Programing - Lab assignment - HTML--group 17
+=========================================================
 
-This project contains the startup code for HTML version of the Interaction Programing course lab assignment. For more details on how to complete the assignment follow the instructions on the [course website](https://www.kth.se/social/course/DH2641).
+This is the code for group 17 in the course Interaction Programmming at KTH 2014 on lab assigment 4. 
