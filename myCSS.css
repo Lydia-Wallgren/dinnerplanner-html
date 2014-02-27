@@ -187,6 +187,13 @@ p.under-pic-dl{
 	padding-right: 15px;
 }
 
+.myIngRow{
+	margin-left: -15px;
+	margin-right: 0px; 
+	padding-right: 1px;
+	padding-left: 15px;
+}
+
 
 /* fullMenu */
 img.fullMenuImage{

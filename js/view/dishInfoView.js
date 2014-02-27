@@ -20,31 +20,36 @@ var DishInfoView = function (container,model) {
 		for (var i = selectedDish.ingredients.length - 1; i >= 0; i--) {
 			var ingredient = selectedDish.ingredients[i];
 
+
+			var ingRow = $("<div>");
+			ingRow.addClass("row myIngRow");
 			this.amountDiv = $("<div>");
 			this.amountDiv.addClass('col-md-3');
 			var quantity = Math.round(ingredient.quantity * model.getNumberOfGuests() * 10)/10;
 			this.amountDiv.html(quantity + ' ' + ingredient.unit);
 
-			this.ingredientDiv.append(this.amountDiv);
+			ingRow.append(this.amountDiv);
 
 			this.nameDiv = $("<div>");
 			this.nameDiv.addClass('col-md-5');
 			this.nameDiv.html(ingredient.name);
 
-			this.ingredientDiv.append(this.nameDiv);
+			ingRow.append(this.nameDiv);
 
 			this.SEKdiv = $("<div>");
 			this.SEKdiv.addClass('col-md-2');
 			this.SEKdiv.html('SEK ');
 
-			this.ingredientDiv.append(this.SEKdiv);
+			ingRow.append(this.SEKdiv);
 
 			this.costDiv = $("<div>");
 			this.costDiv.addClass('col-md-2');
 			var price = Math.round(ingredient.price * model.getNumberOfGuests());
 			this.costDiv.html(price);
 
-			this.ingredientDiv.append(this.costDiv);
+			ingRow.append(this.costDiv);
+
+			this.ingredientDiv.append(ingRow);
 		};
 
 		container.find('#totalCost').html(model.getDishPrice(selectedDish.ingredients));
