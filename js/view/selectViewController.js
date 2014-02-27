@@ -6,11 +6,17 @@ var SelectViewController = function(view, model){
 		
 		view.refreshView(course, filter);
 	});
+	
 	view.dSelect.change(function(){
 		var course = $('#courseSelect option:selected').text();
 		view.refreshView(course);
 
 		$('#searchText').val('');
+	});
+	
+	view.dishList.click(function(e){
+		model.setFocusedDishId(e.target.id);
+		window.changeStage("info");
 	});
 }
 

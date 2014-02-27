@@ -11,6 +11,7 @@ var DinnerModel = function() {
 	
 	this.setFocusedDishId = function (id) {
 		focusedDishId = id;
+		notifyObservers();
 	}
 
 	this.getFocusedDishId = function () {

@@ -1,8 +1,4 @@
 var SelectView = function (container,model) {
-	
-	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
-
 
 	this.dishList = container.find("#dishList");
 	this.selectDish = container.find("#selectDish");
@@ -28,7 +24,7 @@ var SelectView = function (container,model) {
 		if(type == "Dessert"){
 			var dishes = model.getAllDishes("dessert", filter);
 		}
-		/*
+		/* Dish html to be created
 		<div class= "row text-center">
 			<div class= "col-md-3" id="dishPreview">
 				<img src="../dinnerplanner-html/images/meatballs.jpg" class="imageStyle" id="dessertImg">
@@ -40,28 +36,27 @@ var SelectView = function (container,model) {
 		row.addClass("row text-center");
 		for (i=0; i < dishes.length; i++){
 			//dishPreview div
-			this.dishPreview=$("<div>");
-			this.dishPreview.attr("id","dishPreview");
-			this.dishPreview.attr("class","col-md-3");
+			var dishPreview = $("<div>");
+			dishPreview.attr("id","dishPreview");
+			dishPreview.attr("class","col-md-3");
 
 			//img tag
-			this.image=$("<img>");
-			this.image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
-			this.image.attr("class", "imageStyle clickable");
+			var image = $("<img>");
+			image.attr("src", "../dinnerplanner-html/images/"+ dishes[i].image);
+			image.attr("class", "imageStyle clickable");
+			image.attr("id", dishes[i].id);
 
 			//p tag
-			this.imageText=$("<p>");
-			this.imageText.html(dishes[i].name);
-			this.imageText.attr("class", "under-pic-dl");
+			var imageText = $("<p>");
+			imageText.html(dishes[i].name);
+			imageText.attr("class", "under-pic-dl");
 
 			//appending everything
-			row.append(this.dishPreview);
-			this.dishPreview.append(this.image);
-			this.dishPreview.append(this.imageText);
-
+			dishPreview.append(image);
+			dishPreview.append(imageText);
+			row.append(dishPreview);
 		}
 		this.dishList.append(row);
-
 	}
 
 	this.refreshView("Filter by course", "");
