@@ -1,3 +1,4 @@
+//SelectViewController Object constructor
 var SelectViewController = function(view, model){
 	
 	view.sButton.click(function(){

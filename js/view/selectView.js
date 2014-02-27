@@ -1,3 +1,4 @@
+//SelectView Object constructor
 var SelectView = function (container,model) {
 
 	this.dishList = container.find("#dishList");

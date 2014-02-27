@@ -1,4 +1,4 @@
-//ExampleViewController Object constructor
+//HomeViewController Object constructor
 var HomeViewController = function(view, model ) {
 	
 	view.createDinnerButton.click(function() {

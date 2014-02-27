@@ -1,4 +1,4 @@
-//ExampleView Object constructor
+//HomeeView Object constructor
 var HomeView = function (container,model) {
 	
 	this.container = container;

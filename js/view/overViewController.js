@@ -1,4 +1,4 @@
-//ExampleViewController Object constructor
+//OverViewController Object constructor
 var OverViewController = function(view, model ) {
 	
 	view.goToFullMenu.click(function() {

@@ -1,4 +1,4 @@
-//ExampleView Object constructor
+//fullMenuView Object constructor
 var FullMenuView = function (container,model) {
 	
 	this.container = container;

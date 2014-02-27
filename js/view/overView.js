@@ -1,4 +1,4 @@
-//ExampleView Object constructor
+//overView Object constructor
 var OverView = function (container,model) {
 	
 	this.backToEdit = container.find('#backToEdit');
