@@ -10,5 +10,4 @@ var DishInfoViewController = function(view, model ) {
 	view.backToSelectButton.click(function() {
 		window.changeStage("selection");
 	});
-
 }
